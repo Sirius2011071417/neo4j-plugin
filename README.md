@@ -5,14 +5,14 @@
 cd {your-path}/neo4j-community-3.2.0
 bin/neo4j start
 
-open localhost:7474[localhost:7474][1]
+open localhost:7474
 ```
 
 ```
 CREATE (o:Org{org_id:"00000581-4f51-65b7-ea0f-47d7ae27b420", org_name:"shanghai"})-[r:Owner{rel_events:"event", events_cnt:10}]->(o1:Org{org_id:"00000581-4f51-65b7-ea0f-47d7ae27b421", org_name:"zhejiang"})
 ```
 ```
-cd neo
+cd neo4j-plugin
 cp target/neo-0.0.1-SNAPSHOT.jar {your-path}/neo4j-community-3.2.0/plugins
 
 cd {your-path}/neo4j-community-3.2.0
