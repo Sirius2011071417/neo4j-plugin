@@ -42,12 +42,12 @@ import com.service.Service;
  * Hello world!
  *
  */
-@Path("/uuid")
-public class ColleaguesCypherExecutionResource{
+@Path("/")
+public class OrgCypherExecutionResource{
     private final ObjectMapper objectMapper;
     private GraphDatabaseService graphDb;
 
-    public ColleaguesCypherExecutionResource( @Context GraphDatabaseService graphDb )
+    public OrgCypherExecutionResource( @Context GraphDatabaseService graphDb )
     {
         this.graphDb = graphDb;
         this.objectMapper = new ObjectMapper();
@@ -74,7 +74,7 @@ public class ColleaguesCypherExecutionResource{
     }
     
     @POST
-    @Path("/post")
+//    @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
     public Response post(String content) {
     	ObjectMapper mapper = new ObjectMapper();

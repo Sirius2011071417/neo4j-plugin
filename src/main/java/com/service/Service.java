@@ -2,6 +2,7 @@ package com.service;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -57,26 +58,40 @@ public class Service {
 						jg.writeStartObject();
 						jg.writeFieldName("StartNode");
 						jg.writeStartObject();
-						jg.writeFieldName("org_id");
-						jg.writeString(((Node) row.get("o")).getProperty("org_id").toString());
-						jg.writeFieldName("org_name");
-						jg.writeString(((Node) row.get("o")).getProperty("org_name").toString());
+						Node node = (Node) row.get("o");
+						Iterable<String> props = node.getPropertyKeys();
+						Iterator<String> iter = props.iterator();
+						while(iter.hasNext()) {
+							String name = iter.next();
+							jg.writeFieldName(name);
+							jg.writeString(node.getProperty(name).toString());
+						}				
 						jg.writeEndObject();
 	
 						jg.writeFieldName("relationship");
 						jg.writeStartObject();
-						jg.writeFieldName("rel_events");
-						jg.writeString(((Relationship) row.get("r")).getProperty("rel_events", "").toString());
-						jg.writeFieldName("events_cnt");
-						jg.writeString(((Relationship) row.get("r")).getProperty("events_cnt", "").toString());
+						
+						Relationship ship = (Relationship) row.get("r");
+						props = ship.getPropertyKeys();
+						iter = props.iterator();
+						while(iter.hasNext()) {
+							String name = iter.next();
+							jg.writeFieldName(name);
+							jg.writeString(ship.getProperty(name).toString());
+						}	
 						jg.writeEndObject();
 	
 						jg.writeFieldName("EndNode");
 						jg.writeStartObject();
-						jg.writeFieldName("org_id");
-						jg.writeString(((Node) row.get("o1")).getProperty("org_id").toString());
-						jg.writeFieldName("org_name");
-						jg.writeString(((Node) row.get("o1")).getProperty("org_name").toString());
+						
+						node = (Node) row.get("o1");
+						props = node.getPropertyKeys();
+						iter = props.iterator();
+						while(iter.hasNext()) {
+							String name = iter.next();
+							jg.writeFieldName(name);
+							jg.writeString(node.getProperty(name).toString());
+						}	
 						jg.writeEndObject();
 						jg.writeEndObject();
 					}
@@ -120,26 +135,38 @@ public class Service {
 						jg.writeFieldName("StartNode");
 						
 						jg.writeStartObject();
-						jg.writeFieldName("org_id");
-						jg.writeString(((Node) row.get("o")).getProperty("org_id").toString());
-						jg.writeFieldName("org_name");
-						jg.writeString(((Node) row.get("o")).getProperty("org_name").toString());
+						Node node = (Node) row.get("o");
+						Iterable<String> props = node.getPropertyKeys();
+						Iterator<String> iter = props.iterator();
+						while(iter.hasNext()) {
+							String name = iter.next();
+							jg.writeFieldName(name);
+							jg.writeString(node.getProperty(name).toString());
+						}	
 						jg.writeEndObject();
 	
 						jg.writeFieldName("relationship");
 						jg.writeStartObject();
-						jg.writeFieldName("rel_events");
-						jg.writeString(((Relationship) row.get("r")).getProperty("rel_events", "").toString());
-						jg.writeFieldName("events_cnt");
-						jg.writeString(((Relationship) row.get("r")).getProperty("events_cnt", "").toString());
+						Relationship ship = (Relationship) row.get("r");
+						props = ship.getPropertyKeys();
+						iter = props.iterator();
+						while(iter.hasNext()) {
+							String name = iter.next();
+							jg.writeFieldName(name);
+							jg.writeString(ship.getProperty(name).toString());
+						}	
 						jg.writeEndObject();
 	
 						jg.writeFieldName("EndNode");
 						jg.writeStartObject();
-						jg.writeFieldName("org_id");
-						jg.writeString(((Node) row.get("o1")).getProperty("org_id").toString());
-						jg.writeFieldName("org_name");
-						jg.writeString(((Node) row.get("o1")).getProperty("org_name").toString());
+						node = (Node) row.get("o1");
+						props = node.getPropertyKeys();
+						iter = props.iterator();
+						while(iter.hasNext()) {
+							String name = iter.next();
+							jg.writeFieldName(name);
+							jg.writeString(node.getProperty(name).toString());
+						}	
 						jg.writeEndObject();
 						jg.writeEndObject();
 					}
