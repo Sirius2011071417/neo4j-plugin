@@ -24,21 +24,21 @@ bin/neo4j restart
 ```
 Response: JSON
 
-GET localhost:7474/api/uuid/00000581-4f51-65b7-ea0f-47d7ae27b420
-GET localhost:7474/api/uuid/00000581-4f51-65b7-ea0f-47d7ae27b420/?page_size=1
-GET localhost:7474/api/uuid/00000581-4f51-65b7-ea0f-47d7ae27b420/?page_size=1&page=1
+GET localhost:7474/api/00000581-4f51-65b7-ea0f-47d7ae27b420
+GET localhost:7474/api/00000581-4f51-65b7-ea0f-47d7ae27b420/?page_size=1
+GET localhost:7474/api/00000581-4f51-65b7-ea0f-47d7ae27b420/?page_size=1&page=1
 
-GET localhost:7474/api/uuid/
+GET localhost:7474/api/
 relations?startNode=00000581-4f51-65b7-ea0f-47d7ae27b420&endNode=00000581-4f51-65b7-ea0f-47d7ae27b421
-GET localhost:7474/api/uuid/
+GET localhost:7474/api/
 relations?startNode=00000581-4f51-65b7-ea0f-47d7ae27b420&endNode=00000581-4f51-65b7-ea0f-47d7ae27b421&page_size=1
-GET localhost:7474/api/uuid/
+GET localhost:7474/api/
 relations?startNode=00000581-4f51-65b7-ea0f-47d7ae27b420&endNode=00000581-4f51-65b7-ea0f-47d7ae27b421&page=1&page_size=1
 
-POST localhost:7474/api/uuid/post/
+POST localhost:7474/api/
 {"query": {"start_node": "00000581-4f51-65b7-ea0f-47d7ae27b420", "end_node": "00000581-4f51-65b7-ea0f-47d7ae27b421"}}
-POST localhost:7474/api/uuid/post/
+POST localhost:7474/api/
 {"page_size": 2, "query": {"start_node": "00000581-4f51-65b7-ea0f-47d7ae27b420", "end_node": "00000581-4f51-65b7-ea0f-47d7ae27b421"}}
-POST localhost:7474/api/uuid/post/
+POST localhost:7474/api/
 {"page_size": 2, "page":1, "query": {"start_node": "00000581-4f51-65b7-ea0f-47d7ae27b420", "end_node": "00000581-4f51-65b7-ea0f-47d7ae27b421"}}
 ```
